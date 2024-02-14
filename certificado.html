@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=2.0">
+
+<header>
+    <img src="Images/DiDi-Logo.png" width="500" height="281" style="margin-left: 50px; margin-top: 100px;" alt="Logo de la empresa">
+    <h1 style="color: #ec8a0b; margin: 50px; text-align: center ; font-size: 80px; font-family:sans-serif;">INFORMACIÓN DE TRANSACCIÓN</h1>
+</header>
+
+
+<body>
+    <title>Formulario</title>
+    <style>
+        main {
+            margin-top: 400px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Cuatro columnas de igual tamaño */
+            grid-gap: 15px; /* Espacio entre las casillas */
+        }
+
+        p {
+            margin: 2; /* Eliminar el margen predeterminado de los párrafos */
+        }
+
+        input {
+            border: 1px solid orange;
+            padding: 8px; /* Espacio interno para el texto */
+            box-sizing: border-box; /* Incluir el borde en el ancho total del elemento */
+            width: 80%; /* Ajustar el ancho al contenedor de la columna */
+        }
+    </style>
+</head>
+
+    <main>
+        <p style="font-size: 60px; font-family:sans-serif ; margin: 0cap; margin-left: 150px; margin-right: 10px; color: rgb(66, 79, 79);"><strong>PAÍS:</strong></p>
+        <input type="text" style="font-size: 40px; font-family:sans-serif ; margin: 0cap; margin-left: 40px; margin-right: 20px; color: rgb(66, 79, 79);"placeholder="Ingrese el país">
+        <p style="font-size: 60px; font-family:sans-serif ; margin: 0cap; margin-left: 150px; margin-right: 20px; color: rgb(66, 79, 79);"><strong>FECHA TRANSACCIÓN:</strong></p>
+        <input type="datetime" style="font-size: 40px; font-family:sans-serif ; margin: 0cap; margin-left: 40px; margin-right: 20px; color: rgb(66, 79, 79);"placeholder="Fecha transacción">
+        <p style="font-size: 60px; font-family:sans-serif ; margin: 0cap; margin-left: 150px; margin-right: 20px; color: rgb(66, 79, 79);"><strong>MÉTODO DE PAGO:</strong></p>
+        <input type="text" style="font-size: 40px; font-family:sans-serif ; margin: 0cap; margin-left: 40px; margin-right: 20px; color: rgb(66, 79, 79);"placeholder="Información tarjeta">
+        <p style="font-size: 60px; font-family:sans-serif ; margin: 0cap; margin-left: 150px; margin-right: 20px; color: rgb(66, 79, 79);"><strong>VALOR TRANSACCIÓN:</strong></p>
+        <input type="number" style="font-size: 40px; font-family:sans-serif ; margin: 0cap; margin-left: 40px; margin-right: 20px; color: rgb(66, 79, 79);"placeholder="Monto">
+        <p style="font-size: 60px; font-family:sans-serif ; margin: 0cap; margin-left: 150px; margin-right: 20px; color: rgb(66, 79, 79);"><strong>ID TRANSACCIÓN:</strong></p>
+        <input type="number" style="font-size: 40px; font-family:sans-serif ; margin: 0cap; margin-left: 40px; margin-right: 20px; color: rgb(66, 79, 79);"placeholder="Número solicitud del proveedor">
+        <p style="font-size: 60px; font-family:sans-serif ; margin: 0cap; margin-left: 150px; margin-right: 20px; color: rgb(66, 79, 79);"><strong>TIPO TRANSACCIÓN:</strong></p>
+        <input type="number" style="font-size: 40px; font-family:sans-serif ; margin: 0cap; margin-left: 40px; margin-right: 20px; color: rgb(66, 79, 79);"placeholder="Pre-autorización">
+        <p style="font-size: 60px; font-family:sans-serif ; margin: 0cap; margin-left: 150px; margin-right: 20px; color: rgb(66, 79, 79);"><strong>ESTADO TRANSACCIÓN:</strong></p>
+        <input type="text" style="font-size: 40px; font-family:sans-serif ; margin: 0cap; margin-left: 40px; margin-right: 20px; color: rgb(66, 79, 79);"placeholder="Estado transacción">
+    </main>
+
+</body>
+    <footer>
+        <p style="font-size: 40px; font-family:sans-serif ; font-weight: 400; margin-top: 450px; text-align: center; margin-left: 500px; margin-right: 500px;color: rgb(66, 79, 79);"><strong> DiDi retiene temporalmente</strong> un monto en tu tarjeta para asegurar fondos suficientes para un pago futuro, <strong>sin cobrarlo de inmediato.</strong></p>
+        <p style="font-size: 40px; font-family:sans-serif ; font-weight: 400; text-align: center; margin-left: 1000px; margin-right: 1000px;color: rgb(66, 79, 79);"><strong> Tu entidad bancaria es la encargada de liberar el monto retenido </strong>cuando se completa la transacción final, te recomendamos revisar en tu <strong>extracto bancario o estado de cuenta para comprobar que el cobro no se realizó.</strong></p>   
+        <p style="font-size: 40px; font-family:sans-serif ; font-weight: 700; margin-top: 70px; text-align: center;"><strong>Por favor contactate con tu banco si tienes dudas adicionales sobre la transacción.</strong></p>
+    </footer>
