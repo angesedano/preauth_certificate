@@ -1,39 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="es">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=2.0">
+
+<p style="font-family: Arial, Helvetica, sans-serif; text-align: center; margin-top: 20px; background-color: rgb(248, 242, 173); margin-top: 40px;"> <strong>&#9888; </strong> Por favor, llenar toda la información con los datos encontrados en la herramienta <strong>Adyen de CS Global,</strong> después seleccionar el botón <strong>Imprimir</strong></p>
+<button id="btn" onclick="imprimir()" style=" margin-right: 10px; display: block; color: #eeece8; background-color: #ec8a0b; border-color: #935606ae;padding: 20px; font-size: 20px; border-radius: 10px;position: absolute; right: 20px; top: 80px;">Imprimir</button>
 
 
-        
-
-<header>
-    <img src="Images/DiDi-Logo.png" width="240" height="130" style="margin-left: 50px; margin-top: 30px;" alt="Logo de la empresa">
-    <h1 style="color: #ec8a0b; margin: 50px; text-align: center ; font-size: 24px; font-family:sans-serif;">INFORMACIÓN DE TRANSACCIÓN</h1>
-</header>
-
-
-<body>
-    <title>Certificado_pre-autorización</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
     <style>
         main {
-            text-align:left;
+            text-align: left;
+            margin: 0cap;
             margin-top: 100px;
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Cuatro columnas de igual tamaño */
-            gap: 15px; /* Espacio entre las casillas */
-            
-            
+            grid-template-columns: repeat(4, 1fr);
+            /* Cuatro columnas de igual tamaño */
+            gap: 15px;
+            /* Espacio entre las casillas */
+
+
 
             p {
-                font-size: 14px;
-                font-family:sans-serif;
-                margin: 0cap;
-                margin-left: 30px;
-                margin-right: 20px;
+                font-size: 10px;
+                align-items: center;
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 2cap;
+                margin-left: 40px;
+                margin-right: 10px;
                 color: rgb(66, 79, 79);
-                margin: 2; /* Eliminar el margen predeterminado de los párrafos */
-            
+                margin: 2;
+                /* Eliminar el margen predeterminado de los párrafos */
+
             }
 
         }
@@ -41,78 +39,110 @@
 
         input {
             font-size: 12px;
-            font-family:sans-serif;
+            align-items: center;
+            font-family:Arial, Helvetica, sans-serif;
             margin: 0cap;
             margin-left: 5px;
             margin-right: 20px;
             color: rgb(66, 79, 79);
             border: 1px solid orange;
-            padding: 8px; /* Espacio interno para el texto */
-            box-sizing: border-box; /* Incluir el borde en el ancho total del elemento */
-            width: 70%; /* Ajustar el ancho al contenedor de la columna */
+            padding: 5px;
+            /* Espacio interno para el texto */
+            box-sizing: border-box;
+            /* Incluir el borde en el ancho total del elemento */
+            width: 90%;
+            /* Ajustar el ancho al contenedor de la columna */
         }
 
-        footer p{
-            
-            
-            font-size: 12px; 
-            font-family:sans-serif ; 
-            font-weight: 400; 
-            text-align: center; 
-            margin-left: 100px; 
+        footer p {
+
+
+            font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            text-align: center;
+            margin-left: 100px;
             margin-right: 100px;
             color: rgb(66, 79, 79);
+        }
+
+        @media print {
+            body {
+                visibility: hidden;
+            }
+
+            #section-to-print {
+                visibility: visible;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+
+        @page {
+            size: auto;
+            /* auto is the initial value */
+            margin: 0mm;
+            /* this affects the margin in the printer settings */
         }
     </style>
 </head>
 
-    <main>
-        <p> <strong>FECHA TRANSACCIÓN:</strong></p>
-        <input type="datetime-local" placeholder="Fecha transacción">
-        <p> <strong>MÉTODO DE PAGO:</strong></p>
-        <input type="text" placeholder="Información tarjeta">
-        <p> <strong>VALOR TRANSACCIÓN:</strong></p>
-        <input type="currency" placeholder="Monto">
-        <p> <strong>ID TRANSACCIÓN:</strong></p>
-        <input type="text" placeholder="Número solicitud del proveedor">
-        <p> <strong>TIPO TRANSACCIÓN:</strong></p>
-        <input type="text" placeholder="Pre-autorización">
-        <p> <strong>ESTADO TRANSACCIÓN:</strong></p>
-        <input type="text" placeholder="Estado transacción">
-    </main>
+<body>
+    <div id="section-to-print">
+        <header>
+            <img src="Images/DiDi-Logo.png" width="240" height="130" style="margin-left: 50px; margin-top: 30px;"
+                alt="Logo de la empresa">
+            <h1 style="color: #ec8a0b; margin: 50px; text-align: center ; font-size: 24px; font-family:sans-serif;">
+                INFORMACIÓN DE TRANSACCIÓN</h1>
+        </header>
+        <title>Certificado_pre-autorización</title>
 
-    <footer>
-        <p style = "margin-top: 100px;"><strong> IMPORTANTE:</strong> DiDi <strong>retiene temporalmente</strong> un monto en tu tarjeta para asegurar fondos suficientes para un pago futuro, <strong>sin cobrarlo de inmediato.</strong></p>
-        <p ><strong> Tu entidad bancaria es la encargada de liberar el monto retenido </strong>cuando se completa la transacción final, te recomendamos revisar en tu <strong>extracto bancario o estado de cuenta para comprobar que el cobro no se realizó.</strong></p>   
-        <p style="font-size: 14px; font-family:sans-serif ; font-weight: 700; margin-top: 10px; text-align: center; margin-bottom: 50px;"><strong>Por favor contactate con tu banco si tienes dudas adicionales sobre la transacción.</strong></p>
-</footer>
 
-<button onclick="imprimir()" style="margin: 20px auto; display: block; color: #ec8a0b;">Imprimir</button>
 
-<script>
-    function imprimir() {
-        var date = document.getElementById('Fecha transacción').value;
-        var card_info = document.getElementById('Información tarjeta').value;
-        var amount = document.getElementById('Monto').value;
-        var n_solicitud = document.getElementById('Número solicitud del proveedor').value;
-        var preauth = document.getElementById('Pre-autorización').value;
-        var status = document.getElementById('Estado transacción').value;
+        <main>
+            <p> <strong>FECHA TRANSACCIÓN:</strong></p>
+            <input id="date" type="datetime-local" placeholder="Fecha transacción">
+            <p> <strong>MÉTODO DE PAGO:</strong></p>
+            <input id="card_info" type="text" placeholder="Información tarjeta">
+            <p> <strong>VALOR TRANSACCIÓN:</strong></p>
+            <input id="amount" type="currency" placeholder="Monto">
+            <p> <strong>ID TRANSACCIÓN:</strong></p>
+            <input id="n_solicitud" type="text" placeholder="Número solicitud del proveedor">
+            <p> <strong>TIPO TRANSACCIÓN:</strong></p>
+            <input id="preauth" type="text" placeholder="Pre-autorización">
+            <p> <strong>ESTADO TRANSACCIÓN:</strong></p>
+            <input id="status" type="text" placeholder="Estado transacción">
+        </main>
 
-        var contenido = "<strong>FECHA TRANSACCIÓN:</strong> " + date + "<br>" +
-                        "<strong>MÉTODO DE PAGO:</strong> " + card_info + "<br>" +
-                        "<strong>VALOR TRANSACCIÓN:</strong> " + amount + "<br>" +
-                        "<strong>ID TRANSACCIÓN:</strong> " + n_solicitud + "<br>" +
-                        "<strong>TIPO TRANSACCIÓN:</strong> " + preauth + "<br>" +
-                        "<strong>ESTADO TRANSACCIÓN:</strong> " + status;
 
-        var ventanaImpresion = window.open('', '_blank');
-        ventanaImpresion.document.write('<html><head><title>Documento para imprimir</title></head><body>');
-        ventanaImpresion.document.write(contenido);
-        ventanaImpresion.document.write('</body></html>');
-        ventanaImpresion.document.close();
-        ventanaImpresion.print();
-    }
-</script>
+        <footer>
+            <p style="margin-top: 100px;"><strong> IMPORTANTE:</strong> DiDi <strong>retiene temporalmente</strong> un
+                monto en tu tarjeta para asegurar fondos suficientes para un pago futuro, <strong>sin cobrarlo de
+                    inmediato.</strong></p>
+            <p><strong> Tu entidad bancaria es la encargada de liberar el monto retenido </strong>cuando se completa la
+                transacción final, te recomendamos revisar en tu <strong>extracto bancario o estado de cuenta para
+                    comprobar que el cobro no se realizó.</strong></p>
+            <p
+                style="font-size: 14px; font-family:sans-serif ; font-weight: 700; margin-top: 10px; text-align: center; margin-bottom: 50px;">
+                <strong>Por favor contactate con tu banco si tienes dudas adicionales sobre la transacción.</strong></p>
+
+        </footer>
+    </div>
+
+
+    
+
+    <script>
+        function imprimir() {
+            document.querySelectorAll('input').forEach(function (input) {
+                input.style.borderColor = 'white';
+            });
+
+            window.print();
+        }
+    </script>
 
 </body>
+
 </html>
