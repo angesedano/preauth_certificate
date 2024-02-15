@@ -4,14 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=2.0">
 
+
+        
+
 <header>
-    <img src="DiDi-Logo.png" width="240" height="130" style="margin-left: 30px; margin-top: 20px;" alt="Logo de la empresa">
+    <img src="Images/DiDi-Logo.png" width="240" height="130" style="margin-left: 50px; margin-top: 30px;" alt="Logo de la empresa">
     <h1 style="color: #ec8a0b; margin: 50px; text-align: center ; font-size: 24px; font-family:sans-serif;">INFORMACIÓN DE TRANSACCIÓN</h1>
 </header>
 
 
 <body>
-    <title>Formulario</title>
+    <title>Certificado_pre-autorización</title>
     <style>
         main {
             text-align:left;
@@ -19,6 +22,8 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr); /* Cuatro columnas de igual tamaño */
             gap: 15px; /* Espacio entre las casillas */
+            
+            
 
             p {
                 font-size: 14px;
@@ -28,6 +33,7 @@
                 margin-right: 20px;
                 color: rgb(66, 79, 79);
                 margin: 2; /* Eliminar el margen predeterminado de los párrafos */
+            
             }
 
         }
@@ -56,14 +62,11 @@
             margin-left: 100px; 
             margin-right: 100px;
             color: rgb(66, 79, 79);
-            
         }
     </style>
 </head>
 
     <main>
-        <p ><strong>PAÍS:</strong></p>
-        <input type="text" placeholder="Ingrese el país">
         <p> <strong>FECHA TRANSACCIÓN:</strong></p>
         <input type="datetime-local" placeholder="Fecha transacción">
         <p> <strong>MÉTODO DE PAGO:</strong></p>
@@ -71,17 +74,45 @@
         <p> <strong>VALOR TRANSACCIÓN:</strong></p>
         <input type="currency" placeholder="Monto">
         <p> <strong>ID TRANSACCIÓN:</strong></p>
-        <input type="number" placeholder="Número solicitud del proveedor">
+        <input type="text" placeholder="Número solicitud del proveedor">
         <p> <strong>TIPO TRANSACCIÓN:</strong></p>
         <input type="text" placeholder="Pre-autorización">
         <p> <strong>ESTADO TRANSACCIÓN:</strong></p>
         <input type="text" placeholder="Estado transacción">
     </main>
 
-</body>
     <footer>
-                    <p style = "margin-top: 100px;"><strong> DiDi retiene temporalmente</strong> un monto en tu tarjeta para asegurar fondos suficientes para un pago futuro, <strong>sin cobrarlo de inmediato.</strong></p>
-                    <p ><strong> Tu entidad bancaria es la encargada de liberar el monto retenido </strong>cuando se completa la transacción final, te recomendamos revisar en tu <strong>extracto bancario o estado de cuenta para comprobar que el cobro no se realizó.</strong></p>   
-                    <p style="font-size: 14px; font-family:sans-serif ; font-weight: 700; margin-top: 10px; text-align: center; margin-bottom: 50px;"><strong>Por favor contactate con tu banco si tienes dudas adicionales sobre la transacción.</strong></p>
-    </footer>
+        <p style = "margin-top: 100px;"><strong> IMPORTANTE:</strong> DiDi <strong>retiene temporalmente</strong> un monto en tu tarjeta para asegurar fondos suficientes para un pago futuro, <strong>sin cobrarlo de inmediato.</strong></p>
+        <p ><strong> Tu entidad bancaria es la encargada de liberar el monto retenido </strong>cuando se completa la transacción final, te recomendamos revisar en tu <strong>extracto bancario o estado de cuenta para comprobar que el cobro no se realizó.</strong></p>   
+        <p style="font-size: 14px; font-family:sans-serif ; font-weight: 700; margin-top: 10px; text-align: center; margin-bottom: 50px;"><strong>Por favor contactate con tu banco si tienes dudas adicionales sobre la transacción.</strong></p>
+</footer>
+
+<button onclick="imprimir()" style="margin: 20px auto; display: block; color: #ec8a0b;">Imprimir</button>
+
+<script>
+    function imprimir() {
+        var date = document.getElementById('Fecha transacción').value;
+        var card_info = document.getElementById('Información tarjeta').value;
+        var amount = document.getElementById('Monto').value;
+        var n_solicitud = document.getElementById('Número solicitud del proveedor').value;
+        var preauth = document.getElementById('Pre-autorización').value;
+        var status = document.getElementById('Estado transacción').value;
+
+        var contenido = "<strong>FECHA TRANSACCIÓN:</strong> " + date + "<br>" +
+                        "<strong>MÉTODO DE PAGO:</strong> " + card_info + "<br>" +
+                        "<strong>VALOR TRANSACCIÓN:</strong> " + amount + "<br>" +
+                        "<strong>ID TRANSACCIÓN:</strong> " + n_solicitud + "<br>" +
+                        "<strong>TIPO TRANSACCIÓN:</strong> " + preauth + "<br>" +
+                        "<strong>ESTADO TRANSACCIÓN:</strong> " + status;
+
+        var ventanaImpresion = window.open('', '_blank');
+        ventanaImpresion.document.write('<html><head><title>Documento para imprimir</title></head><body>');
+        ventanaImpresion.document.write(contenido);
+        ventanaImpresion.document.write('</body></html>');
+        ventanaImpresion.document.close();
+        ventanaImpresion.print();
+    }
+</script>
+
+</body>
 </html>
